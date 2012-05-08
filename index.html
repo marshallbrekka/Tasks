@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Ticket Manager</title>
+<link rel="stylesheet/less" type="text/css" href="css/styles.less"></link>
+</head>
+
+<body>
+
+	<div id="container">
+		
+	</div>
+	
+<script src="js/jquery-1.7.2.min.js"></script>
+<script src="js/less-1.3.0.min.js"></script>
+<script>
+    var TicketManager = {};
+    var TM = TicketManager;
+    TM.appUrl = location.protocol + '//' + location.hostname + ':' + location.port;
+</script>
+<script src="js/lib/util.js"></script>
+<script src="js/lib/DataStore.js"></script>
+<script src="js/model/API.js"></script>
+<script src="js/model/Priority.js"></script>
+<script src="js/model/Project.js"></script>
+<script src="js/model/Ticket.js"></script>
+
+<script src="js/view/DescriptionBox.js"></script>
+<script src="js/view/IconBox.js"></script>
+<script src="js/view/IconPickerBox.js"></script>
+<script src="js/view/Popup.js"></script>
+<script src="js/view/PriorityBox.js"></script>
+<script src="js/view/Select.js"></script>
+<script src="js/view/Ticket.js"></script>
+<script src="js/view/NewTicket.js"></script>
+<script src="js/view/TitleBox.js"></script>
+<script src="js/view/AddButton.js"></script>
+<script src="js/view/Button.js"></script>
+<script src="js/view/List.js"></script>
+<script src="js/view/Page.js"></script>
+<script src="js/view/ExpandableIconBox.js"></script>
+<script src="js/view/Project.js"></script>
+<script src="js/view/IconPopup.js"></script>
+<script src="js/view/IconUploader.js"></script>
+<script src="js/controller/Tickets.js"></script>
+<script src="js/controller/Projects.js"></script>
+<script src="js/controller/Main.js"></script>
+<script>
+    new TicketManager.controller.Main($('#container'));
+</script>
+</body>
+</html>
