@@ -9,7 +9,7 @@
 		var self = this;
 		this.init = false;
 		this.loadedCallback = loadedCallback;
-		this.container = $('<div class="create">+</div>');
+		this.container = $('<div class="create">+</div>').click(function(e){e.stopPropagation()});
 		this.iframe = $('<iframe/>');
 		this.iframe.load(function(){
 			self.load();

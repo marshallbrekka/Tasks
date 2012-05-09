@@ -19,7 +19,7 @@
 		}
 		
         this.list = new lib.view.List(createView, elements);
-		var button = new lib.view.Button('Manage Projects', manageCallback);
+		var button = new lib.view.Button('Manage Categories', manageCallback);
 		this.page = new lib.view.Page(parent, [button, this.list]);
 		parent.append(this.page.container);
     }

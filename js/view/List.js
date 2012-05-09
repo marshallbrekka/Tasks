@@ -28,12 +28,17 @@
 		this.addBtn.toggleIcon(cb);
 	}
     
-    view.List.prototype.remove = function(index, item, cb) {
+    view.List.prototype.remove = function(index, item, cb, detach) {
         if(item == undefined) {
 			item = {container : this.container.children().eq(index + 2)};
 		}
         this.hideItem(item, function() {
-            item.container.remove();
+			if(detach) {
+				item.container.detach();
+			} else {
+				item.container.remove();
+			}
+            
             if(cb) {
                 cb();
             }
@@ -63,7 +68,7 @@
         var self = this;
         this.remove(oldIndex, item, function(){
             self.add(newIndex, item, cb);
-        });
+        }, true);
     }
 	
     

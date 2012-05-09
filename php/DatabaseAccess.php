@@ -127,6 +127,10 @@ class DatabaseAccess {
 		$this->mysqli->close();
 	}
 	
+	public function escapeString($val) {
+		return $this->mysqli->real_escape_string($val);
+	}
+	
 	public static function int($val) {
 		return intval($val);
 	}

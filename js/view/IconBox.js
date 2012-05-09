@@ -11,7 +11,7 @@
 	view.IconBox = function(params) {
 		var self = this;
 		this.disabled = params.disabled === undefined ? false : params.disabled;
-		var style = params.icon !== undefined ? ' style="background:url(img/icons/' + params.icon + '.png)"' : '';
+		var style = params.icon !== undefined ? ' style="background:url(img/icons/' + params.icon + '.png) center center no-repeat"' : '';
 		var icon = $('<a' + style + '/>');
 		if(this.disabled) {
 			params.klass += ' disabled';

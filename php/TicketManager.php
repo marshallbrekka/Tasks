@@ -169,7 +169,7 @@ class TicketManager {
 
 	private function getUrlParam($name) {
 		if(isset($_GET[$name])) {
-			return $_GET[$name];
+			return $this->database->escapeString($_GET[$name]);
 		} else {
 			return 'NULL';
 		}

@@ -1,9 +1,9 @@
 <?php
 /*
 $host = 'localhost';
-$username = 'infallib';
-$password = 'mathbr682';
-$name = 'infallib_tb4c';
+$username = 'mbrekka_tasks';
+$password = 'tasks_final';
+$name = 'mbrekka_tasks';
 */
 $host = 'localhost';
 $username = 'root';

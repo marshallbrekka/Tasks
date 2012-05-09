@@ -69,7 +69,7 @@
 	view.IconPopup.prototype.createIcon = function(icon, callback, selected) {
 		var element;
 		var klass = selected === icon ? ' class="selected"' : '';
-		element = $('<div' + klass + '><a style="background-image:url(../img/icons/' + icon + '.png)"></a></div>');
+		element = $('<div' + klass + '><a style="background-image:url(img/icons/' + icon + '.png)"></a></div>');
 		element.click(callback);
 		return element;
 	}
