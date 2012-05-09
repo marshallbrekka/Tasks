@@ -5,17 +5,17 @@
         var self = this;
         this.container = $('<ul/>');
         
-		this.reset = function(){
+        this.reset = function(){
             self.hideItem(createView, function(){
                 createView.reset();
-				
+                
             });
-		}
+        }
 
         this.addBtn = new view.AddButton(function(){
             self.showItem(createView);
         }, this.reset);
-		this.container.append(createView.container, this.addBtn.container);
+        this.container.append(createView.container, this.addBtn.container);
         
         if(!lib.util.empty(elements)) {
             for(var i = 0; i < elements.length; i++) {
@@ -23,21 +23,21 @@
             }
         }
     }
-	
-	view.List.prototype.resetAdd = function(cb) {
-		this.addBtn.toggleIcon(cb);
-	}
+    
+    view.List.prototype.resetAdd = function(cb) {
+        this.addBtn.toggleIcon(cb);
+    }
     
     view.List.prototype.remove = function(index, item, cb, detach) {
         if(item == undefined) {
-			item = {container : this.container.children().eq(index + 2)};
-		}
+            item = {container : this.container.children().eq(index + 2)};
+        }
         this.hideItem(item, function() {
-			if(detach) {
-				item.container.detach();
-			} else {
-				item.container.remove();
-			}
+            if(detach) {
+                item.container.detach();
+            } else {
+                item.container.remove();
+            }
             
             if(cb) {
                 cb();
@@ -60,7 +60,7 @@
         var before = this.container.children().eq(index + 1);
         item.container.css({opacity:0, display:'none'});
         before.after(item.container);
-		item.addEvents();
+        item.addEvents();
         this.showItem(item, cb);
     }
     
@@ -70,7 +70,7 @@
             self.add(newIndex, item, cb);
         }, true);
     }
-	
+    
     
     view.List.prototype.hideItem = function(item, cb) {
         item.container.animate({'opacity' : 0}, 200);
@@ -83,7 +83,7 @@
     view.List.prototype.showItem = function(item, cb) {
         
         item.container.slideDown(300, function(){
-			item.container.animate({'opacity' : 1}, 200);
+            item.container.animate({'opacity' : 1}, 200);
             if(cb) cb();
         });
     }

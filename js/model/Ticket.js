@@ -1,7 +1,7 @@
 (function(lib){
-	var model = lib.util.extendNamespace('model');
-	
-	
+    var model = lib.util.extendNamespace('model');
+    
+    
     /**
      * ticket
      * @param {int} [o.id] the id, may not be present on initial create
@@ -12,11 +12,11 @@
      * @param {string} [o.notes] the notes
      */
     model.Ticket = function(o) {
-		this.id = o.id;
-		this.created = o.created;
-		this.project = lib.DataStore.getProject(o.projectId);
-		this.priority = lib.DataStore.getPriority(o.priorityId);
-		this.description = o.description;
-		this.notes = o.notes;
-	}
+        this.id = o.id;
+        this.created = o.created;
+        this.project = lib.DataStore.getProject(o.projectId);
+        this.priority = lib.DataStore.getPriority(o.priorityId);
+        this.description = o.description;
+        this.notes = o.notes;
+    }
 })(TicketManager);

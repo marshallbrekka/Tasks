@@ -1,13 +1,13 @@
 (function(lib){
     var view = lib.util.extendNamespace('view');
     
-	/**
-	 * creates a ticket view
-	 * @param {model.Ticket} ticket the ticket
-	 * @param {function(ticket, view)} iconClick icon click callback function
-	 * @param {function(ticket, priority, view)} priorityChange callback function
-	 */
-	view.Ticket = function(ticket, iconClick, priorityChange) {
+    /**
+     * creates a ticket view
+     * @param {model.Ticket} ticket the ticket
+     * @param {function(ticket, view)} iconClick icon click callback function
+     * @param {function(ticket, priority, view)} priorityChange callback function
+     */
+    view.Ticket = function(ticket, iconClick, priorityChange) {
         this.container = $('<li/>');
         this.ticket = ticket;
         var self = this;
@@ -16,7 +16,7 @@
                 iconClick(ticket, self);
             },
             icon : ticket.project.icon,
-			klass : 'removable'
+            klass : 'removable'
         });
         
         var title = new view.TitleBox({
@@ -51,10 +51,10 @@
         
         
     }
-	
-	view.Ticket.prototype.addEvents = function() {
-		this.priority.addEvents();
-	}
+    
+    view.Ticket.prototype.addEvents = function() {
+        this.priority.addEvents();
+    }
     
     view.Ticket.prototype.openNotes = function() {
         new view.Popup({

@@ -1,9 +1,9 @@
 (function(lib){
     var view = lib.util.extendNamespace('view');
     
-	view.NewTicket = function(callback) {
+    view.NewTicket = function(callback) {
         this.container = $('<li class="new"/>');
-		this.container.css({opacity:0, display:'none'});
+        this.container.css({opacity:0, display:'none'});
         this.values = {
             project : null,
             description : null,
@@ -13,7 +13,7 @@
         this.valid = false;
         
         var self = this;
-		this.callback = callback;
+        this.callback = callback;
         this.icon = new view.IconBox({
             callback : function(){
                 self.createTicket();
@@ -23,27 +23,27 @@
         });
         
         this.title = new view.TitleBox({
-			edit : true,
-			callback : function(val) {
-				self.titleCallback(val);
-			}
+            edit : true,
+            callback : function(val) {
+                self.titleCallback(val);
+            }
         });
         
         this.description = new view.DescriptionBox({
             edit : true,
-			callback : function(val) {
-				self.descriptionCallback(val);
-			}
+            callback : function(val) {
+                self.descriptionCallback(val);
+            }
         });
         
         var notes = new view.IconBox({
-			callback : function() {
-				self.openNotes();
-			},
-			klass : 'notes'
-		});
+            callback : function() {
+                self.openNotes();
+            },
+            klass : 'notes'
+        });
         this.priority = new view.PriorityBox({
-			edit : true,
+            edit : true,
             callback : function(val) {
                 self.priorityCallback(val);
             }
@@ -76,31 +76,31 @@
             this.icon.setDisabled(!valid);
         }
     }
-	
-	view.NewTicket.prototype.descriptionCallback = function(val) {
-		this.values.description = val;
+    
+    view.NewTicket.prototype.descriptionCallback = function(val) {
+        this.values.description = val;
         this.validate();
-	}
-	
-	view.NewTicket.prototype.titleCallback = function(val) {
-		this.values.project = val;
+    }
+    
+    view.NewTicket.prototype.titleCallback = function(val) {
+        this.values.project = val;
         this.validate();
-	}
-	
-	view.NewTicket.prototype.priorityCallback = function(val) {
-		this.values.priority = val;
+    }
+    
+    view.NewTicket.prototype.priorityCallback = function(val) {
+        this.values.priority = val;
         this.validate();
-	}
+    }
     
     view.NewTicket.prototype.notesCallback = function(val) {
         this.values.notes = val;
     }
-	
-	view.NewTicket.prototype.createTicket = function() {
-		if(this.valid) {
+    
+    view.NewTicket.prototype.createTicket = function() {
+        if(this.valid) {
             this.callback(this.values);
         }
-	}
+    }
     
     view.NewTicket.prototype.openNotes = function() {
         var self = this;

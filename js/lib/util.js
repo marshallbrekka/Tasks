@@ -1,6 +1,6 @@
 (function(lib) {
     lib.util = {};
-	var util = lib.util;
+    var util = lib.util;
     
 
     /**
@@ -26,12 +26,12 @@
     }
     
     /**
-	 * checks if the value is empty or not
-	 * @param {object|number|string|function} val the value to check
-	 */
-	util.empty = function(val) {
-		return (val === undefined || val === null || val === "");
-	}
+     * checks if the value is empty or not
+     * @param {object|number|string|function} val the value to check
+     */
+    util.empty = function(val) {
+        return (val === undefined || val === null || val === "");
+    }
 
 })(TicketManager);
 

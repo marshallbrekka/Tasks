@@ -9,21 +9,21 @@
      * @param {function} [config.callback] only used when config.edit=true, calls every time the form changes
      */
     view.DescriptionBox = function(config) {
-		var self = this;
+        var self = this;
         this.callback = config.callback;
-		this.container = $('<div class="description"/>');
-		if(config.edit) {
-			this.label = $('<textarea/>');
+        this.container = $('<div class="description"/>');
+        if(config.edit) {
+            this.label = $('<textarea/>');
             var valFn = function(){
                 self.getValue();
             }
-			this.label.keypress(valFn).keyup(valFn);
-		} else {
+            this.label.keypress(valFn).keyup(valFn);
+        } else {
             var val = config.text !== undefined ? config.text : '';
-			this.label = $('<span>' + val + '</span>');
-		}
+            this.label = $('<span>' + val + '</span>');
+        }
         this.container.append(this.label);
-	}
+    }
     
     view.DescriptionBox.prototype.getValue = function() {
         var val = this.label.val();
@@ -37,7 +37,7 @@
     view.DescriptionBox.prototype.reset = function() {
         this.label.val('');
     }
-	
+    
     
 })(TicketManager);
 

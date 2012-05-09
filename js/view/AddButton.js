@@ -1,7 +1,7 @@
 (function(lib){
     var view = lib.util.extendNamespace('view');
     
-	view.AddButton = function(addCallback, cancelCallback) {
+    view.AddButton = function(addCallback, cancelCallback) {
         this.container = $('<li/>');
         this.add = true;
         var self = this;
@@ -30,9 +30,9 @@
             div.addClass('add');
             this.cancelCallback();
         }
-		if(cb) cb();
+        if(cb) cb();
     }
-	
+    
     
     
 })(TicketManager);
